@@ -4,6 +4,27 @@ pipeline {
 
     stages {
 
+        stage('Debug') {
+            steps {
+                bat '''
+                echo Branch:
+                git branch
+
+                echo.
+                echo Workspace:
+                cd
+
+                echo.
+                echo Dockerfiles found:
+                dir /s Dockerfile
+
+                echo.
+                echo All files:
+                dir
+                '''
+            }
+        }        
+
         stage('Cleanup') {
             steps {
                 cleanWs()
