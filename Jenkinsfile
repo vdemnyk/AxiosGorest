@@ -2,28 +2,7 @@ pipeline {
 
     agent any
 
-    stages {
-
-        stage('Debug') {
-            steps {
-                bat '''
-                echo Branch:
-                git branch
-
-                echo.
-                echo Workspace:
-                cd
-
-                echo.
-                echo Dockerfiles found:
-                dir /s Dockerfile
-
-                echo.
-                echo All files:
-                dir
-                '''
-            }
-        }                
+    stages {               
 
         stage('Build Docker Image') {
             steps {
@@ -34,6 +13,7 @@ pipeline {
         stage('Run Tests') {
             steps {
                 bat '''
+                if exist allure-results rmdir /s /q allure-results
                 mkdir allure-results
                 
                 docker run --rm ^
