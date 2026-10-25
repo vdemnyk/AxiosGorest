@@ -1,0 +1,22 @@
+{
+  "name": "axiosgorest",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^1.2.3",
+    "mocha": "^10.2.0"
+  },
+  "devDependencies": {
+    "allure-commandline": "^2.46.1",
+    "chance": "^1.1.9",
+    "expect": "^29.3.1",
+    "jest": "^29.3.1",
+    "jest-allure2-reporter": "^2.3.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC"
+}
