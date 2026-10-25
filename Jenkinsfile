@@ -23,13 +23,7 @@ pipeline {
                 dir
                 '''
             }
-        }        
-
-        stage('Cleanup') {
-            steps {
-                cleanWs()
-            }
-        }        
+        }                
 
         stage('Build Docker Image') {
             steps {
